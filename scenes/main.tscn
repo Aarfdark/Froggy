@@ -32,6 +32,9 @@ script = ExtResource("5_tbgi4")
 [node name="Board" parent="." instance=ExtResource("1_o5qli")]
 position = Vector2(196, 246)
 
+[node name="Timer" type="Timer" parent="Board"]
+autostart = true
+
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -90,8 +93,4 @@ offset_bottom = 22.3333
 theme_override_font_sizes/font_size = 24
 text = "🪰: 0"
 
-[node name="Timer" type="Timer" parent="Control/FlyCounter"]
-wait_time = 0.5
-autostart = true
-
-[connection signal="timeout" from="Control/FlyCounter/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Board/Timer" to="Board" method="_on_timer_timeout"]
