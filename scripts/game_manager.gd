@@ -7,9 +7,6 @@ extends Node2D
 enum {NONE=-1, LILYPAD=0, FLY=1}
 var building_buttons: Array
 
-var num_flies = 0
-@onready var fly_counter: Label = $Control/FlyCounter
-
 func _ready():
 	building_buttons = building_container.get_children()
 	for button in building_buttons:

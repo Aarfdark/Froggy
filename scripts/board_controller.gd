@@ -10,13 +10,15 @@ var building_dict = {
 	FLY : Vector2i(1,0),
 }
 
-@onready var fly_counter: Label = $"../Control/FlyCounter"
+@onready var fly_counter: Label = $"../Control/ResourceUI/FlyCounter"
 var num_flies: int
 var building_cost = {
 	NONE : 0,
 	LILYPAD: 100,
 	FLY: 200,
 }
+
+@onready var frog_counter: Label = $"../Control/ResourceUI/FrogCounter"
 
 func set_building(type):
 	cur_building = type
