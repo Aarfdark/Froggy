@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dktrw4sj86mkf" path="res://scenes/board.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://dqp3itfxeqrg" path="res://scripts/game_manager.gd" id="1_sugp2"]
-[ext_resource type="AudioStream" uid="uid://5rkok8aawc2v" path="res://assets/Frog.wav" id="4_jyhfs"]
+[ext_resource type="AudioStream" uid="uid://b8h2b86kbfk05" path="res://assets/Frog.ogg" id="2_jyhfs"]
 [ext_resource type="Script" uid="uid://bihupjp6kbad5" path="res://scripts/music.gd" id="5_tbgi4"]
 
 [sub_resource type="GDScript" id="GDScript_jyhfs"]
@@ -26,7 +26,7 @@ bg_color = Color(0.282353, 0.705882, 0.227451, 1)
 script = ExtResource("1_sugp2")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_jyhfs")
+stream = ExtResource("2_jyhfs")
 script = ExtResource("5_tbgi4")
 
 [node name="Board" parent="." instance=ExtResource("1_o5qli")]
@@ -82,3 +82,16 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_0wfyh")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jyhfs")
 toggle_mode = true
 text = "Fly"
+
+[node name="FlyCounter" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 22.3333
+theme_override_font_sizes/font_size = 24
+text = "🪰: 0"
+
+[node name="Timer" type="Timer" parent="Control/FlyCounter"]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="Control/FlyCounter/Timer" to="." method="_on_timer_timeout"]

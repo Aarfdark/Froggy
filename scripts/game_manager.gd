@@ -7,10 +7,16 @@ extends Node2D
 enum {NONE=-1, LILYPAD=0, FLY=1}
 var building_buttons: Array
 
+var num_flies = 0
+@onready var fly_counter: Label = $Control/FlyCounter
+
 func _ready():
 	building_buttons = building_container.get_children()
 	for button in building_buttons:
 		button.connect("toggled", building_select.bind(button))
+
+func _process(_delta):
+	fly_counter.text = "🪰: " + str(num_flies)
 	
 func _input(event):
 	if event is InputEventMouseButton:
@@ -30,3 +36,7 @@ func building_select(toggled, cur_button):
 			"Fly": board_controller.set_building(FLY)
 	if !toggled:
 		board_controller.set_building(NONE)
+
+
+func _on_timer_timeout() -> void:
+	num_flies += 25
