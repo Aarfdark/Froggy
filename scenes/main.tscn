@@ -117,7 +117,18 @@ texture_over = ExtResource("7_85g3d")
 texture_progress = ExtResource("9_ya4ey")
 texture_progress_offset = Vector2(75, 8)
 
-[node name="FrogCounter" type="Label" parent="Control/ResourceUI"]
+[node name="DaysCounter" type="Label" parent="Control/ResourceUI"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Days Remaining: 30"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ResourceUI"]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="FrogCounter" type="Label" parent="Control/ResourceUI/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 0
@@ -125,7 +136,7 @@ theme_override_colors/font_color = Color(0, 0.686275, 0, 1)
 theme_override_font_sizes/font_size = 24
 text = "🐸: 0"
 
-[node name="FlyCounter" type="Label" parent="Control/ResourceUI"]
+[node name="FlyCounter" type="Label" parent="Control/ResourceUI/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 0
