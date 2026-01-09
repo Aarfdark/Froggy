@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bjs3ergtg06f4"]
+[gd_scene load_steps=15 format=4 uid="uid://bjs3ergtg06f4"]
 
 [ext_resource type="PackedScene" uid="uid://dktrw4sj86mkf" path="res://scenes/board.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://dqp3itfxeqrg" path="res://scripts/game_manager.gd" id="1_sugp2"]
@@ -36,6 +36,7 @@ script = ExtResource("5_tbgi4")
 
 [node name="Board" parent="." instance=ExtResource("1_o5qli")]
 position = Vector2(196, 246)
+tile_map_data = PackedByteArray("AAAAAAAAAAACAAAAAAABAAAAAAACAAAAAAAAAP//AAACAAAAAAABAP//AAACAAAAAAACAP7/AAACAAAAAAACAAIAAAACAAAAAAADAAIAAAACAAAAAAAEAAIAAAACAAAAAAAEAAEAAAACAAAAAAAFAAAAAAACAAAAAAAEAP//AAACAAAAAAAAAAEAAAACAAAAAAABAAIAAAACAAAAAAADAP7/AAACAAAAAAAEAP7/AAACAAAAAAABAP7/AAACAAAAAAABAAEAAAACAAAAAAACAAEAAAACAAAAAAADAAEAAAACAAAAAAAEAAAAAAACAAAAAAADAAAAAAACAAAAAAACAAAAAAACAAAAAAACAP//AAACAAAAAAADAP//AAACAAAAAAA=")
 
 [node name="Timer" type="Timer" parent="Board"]
 autostart = true
@@ -103,7 +104,7 @@ layout_mode = 2
 
 [node name="HappyBar" type="TextureProgressBar" parent="Control/ResourceUI/Bars"]
 layout_mode = 2
-value = 96.0
+value = 78.0
 texture_under = ExtResource("5_o6xl0")
 texture_over = ExtResource("6_tipki")
 texture_progress = ExtResource("7_choun")
@@ -111,7 +112,7 @@ texture_progress_offset = Vector2(75, 8)
 
 [node name="EnergyBar" type="TextureProgressBar" parent="Control/ResourceUI/Bars"]
 layout_mode = 2
-value = 50.0
+value = 51.0
 texture_under = ExtResource("5_o6xl0")
 texture_over = ExtResource("7_85g3d")
 texture_progress = ExtResource("9_ya4ey")
