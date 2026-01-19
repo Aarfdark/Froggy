@@ -1,7 +1,8 @@
 # kills you badstyle
 extends Node2D
 
-@onready var building_container: HBoxContainer = $Control/BuildingUI/MarginContainer/BuildingContainer
+#@onready var building_container: HBoxContainer = $Control/BuildingUI/MarginContainer/BuildingContainer
+@onready var building_container: VBoxContainer = $Control/BuildingUI2/MarginContainer2/BuildingContainer2
 @onready var board_controller: TileMapLayer = $Board
 
 enum {NONE=-1, LILYPAD=0, FLY=1}

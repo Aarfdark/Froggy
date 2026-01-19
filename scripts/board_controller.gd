@@ -65,7 +65,7 @@ func _input(event):
 						#building_counter[tile_clicked] -= 1
 				else:
 					print("Not enough flies to build " + str(cur_building))
-					#TODO: add message in-game
+					#TODO: add feedback in-game
 			
 			# update variables
 			# lilypads
